@@ -13,14 +13,14 @@ export const GradientText = styled.h1`
 	background: -webkit-linear-gradient(0deg,
 		${props => props.active ?
 		theme.colors.pink :
-		theme.colors.offwhite},
+		theme.colors.lightGrey},
 		${props => props.active ?
 		theme.colors.lime :
-		theme.colors.pink
-	} 90%);
+		theme.colors.void
+	} 60%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	-webkit-transition: background 300ms;
+	-webkit-transition: background 1s;
 	background-size: 100%;
 	background-position: left;
 	&:first-child {

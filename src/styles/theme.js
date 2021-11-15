@@ -6,6 +6,7 @@ export const theme = {
 	},
 	colors: {
 		void: '#111010',
+		lightGrey: '#595959',
 		purple: '#ab22ff',
 		pink: '#fb22ff',
 		lime: '#61ff84',

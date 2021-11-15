@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const SectionWrapper = styled.section`
 	display: grid;
-	grid-template-columns: 60% 40%;
+	grid-template-columns: 65% 35%;
 	height: 100vh;
 	
 	@media(max-width: 768px) {
@@ -12,9 +12,15 @@ export const SectionWrapper = styled.section`
 `
 
 export const Menu = styled.div`
-	height: 100vh;
+	height: 500px;
+	margin: auto 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+	@media(max-width: 768px) {
+		height: unset;
+		margin-bottom: 0;
+	}
 `

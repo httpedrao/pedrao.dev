@@ -11,9 +11,11 @@ export default function Writing() {
       </Head>
 
       <SectionWrapper>
-        <p style={{color: 'white'}}> 
-          Writing
-        </p>
+        <section>
+          <p style={{ color: 'white' }}>
+            Writing
+          </p>
+        </section>
         <Navigation />
       </SectionWrapper>
     </div>
