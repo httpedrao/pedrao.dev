@@ -1,7 +1,14 @@
 export const theme = {
 	text: {
 		fontSize: {
-			large: '3.45em'
+			tiny: '.9rem',
+			small: '1.45rem',
+			large: '3.45rem'
+		},
+		fontWeight: {
+			bold: '600',
+			light: '300',
+			regular: '500'
 		}
 	},
 	colors: {
