@@ -8,13 +8,11 @@ module.exports = {
       {
         protocol: 'https',
         hostname: 'placekitten.com',
-        port: '',
         pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
-        port: '',
         pathname: '/**',
       },
     ],

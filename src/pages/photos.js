@@ -9,6 +9,7 @@ export default function Photos({ data }) {
       <article className="photo">
         <a href={links.html}>
           <Image
+            alt=""
             src={urls.small}
             width="400"
             height="280"
@@ -22,7 +23,7 @@ export default function Photos({ data }) {
   return data ? (
     <div className="photos-container">
       {data.map((pic) => {
-        return <Photo photo={pic} />
+        return <Photo photo={pic} key={pic.urls.small} />
       })}
     </div>
   ) : <p>loading...</p>;
