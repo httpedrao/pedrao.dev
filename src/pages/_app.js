@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>pedro who?</title>
+        <title>pedro who? WORK IN PROGRESS</title>
         <meta name="description" content="Software Engineer" />
       </Head>
       <LayoutWrapper>

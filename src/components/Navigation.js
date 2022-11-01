@@ -22,7 +22,7 @@ function Navigation() {
     {
       label: "hello",
       path: "/hello",
-    },
+    }
   ];
 
   return (
