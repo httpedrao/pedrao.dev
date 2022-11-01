@@ -1,55 +1,39 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
-import { GradientText } from './GradientText'
-import { Menu } from './Wrapper'
-import { useRouter } from 'next/router'
+import { NavigationLink } from "./NavigationLink";
+import { Menu } from "./Wrapper";
+import { useRouter } from "next/router";
 
 function Navigation() {
-	const [activeRoute, setActiveRoute] = useState('/')
-	const router = useRouter()
+  const router = useRouter();
+  const MENU_OPTIONS = [
+    {
+      label: "pedro who?",
+      path: "/",
+    },
+    {
+      label: "words",
+      path: "/words",
+    },
+    {
+      label: "photos",
+      path: "/photos",
+    },
+    {
+      label: "hello",
+      path: "/hello",
+    }
+  ];
 
-	function handleClick(href) {
-		router.push(href)
-	}
-
-	const MENU_OPTIONS = [
-		{
-			label: 'pedro who?',
-			path: '/'
-		},
-		{
-			label: 'writing',
-			path: 'writing'
-		},
-		{
-			label: 'photos',
-			path: 'photos'
-		},
-		{
-			label: 'say hello',
-			path: 'say-hello'
-		},
-	]
-
-	useEffect(() => {
-		let path = router.pathname == '/' ? router.pathname : router.pathname.substring(1)
-		setActiveRoute(path)
-	}, [router])
-	return (
-		<Menu>
-			{MENU_OPTIONS.map(({ label, path }) =>
-				<GradientText
-					key={path}
-					onClick={() => handleClick(path)}
-					active={activeRoute == path}
-				>
-					{label}
-				</GradientText>
-			)}
-		</Menu >
-	)
+  return (
+    <Menu>
+      {MENU_OPTIONS.map(({ label, path }) => (
+        <NavigationLink key={path} href={path} active={router.asPath == path}>
+          {label}
+        </NavigationLink>
+      ))}
+    </Menu>
+  );
 }
 
-export default Navigation
-
-
+export default Navigation;

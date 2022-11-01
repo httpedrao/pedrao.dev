@@ -1,18 +1,13 @@
-import Head from 'next/head'
-import Navigation from '../components/Navigation'
-import { SectionWrapper } from '../components/Wrapper'
+import { Content, LayoutWrapper } from "../components/Wrapper";
+
+import Head from "next/head";
+import { Image } from "../components/Image";
+import Navigation from "../components/Navigation";
 
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>pedro who?</title>
-        <meta name="description" content="Software Engineer" />
-      </Head>
-      <SectionWrapper>
-        <div />
-        <Navigation/>
-      </SectionWrapper>
-    </div>
-  )
+      <Content>
+        <Image src="http://placekitten.com/500/500" />
+      </Content>
+  );
 }

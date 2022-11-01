@@ -1,21 +1,48 @@
-import Head from 'next/head'
-import Navigation from '../components/Navigation'
-import { SectionWrapper } from '../components/Wrapper'
+import Image from "next/image";
+import { createApi } from "unsplash-js";
 
-export default function Photos() {
-  return (
-    <div>
-      <Head>
-        <title>pedro who?</title>
-        <meta name="description" content="Software Engineer" />
-      </Head>
+export default function Photos({ data }) {
+  const Photo = ({ photo }) => {
+    const { user, urls, links } = photo
 
-      <SectionWrapper>
-      <p style={{color: 'white'}}> 
-          photos
-        </p>
-        <Navigation />
-      </SectionWrapper>
+    return (
+      <article className="photo">
+        <a href={links.html}>
+          <Image
+            alt=""
+            src={urls.small}
+            width="400"
+            height="280"
+          />
+        </a>
+        <small style={{ color: 'white' }}>{user.name}</small>
+      </article>
+    )
+  }
+
+  return data ? (
+    <div className="photos-container">
+      {data.map((pic) => {
+        return <Photo photo={pic} key={pic.urls.small} />
+      })}
     </div>
-  )
+  ) : <p>loading...</p>;
+}
+export async function getServerSideProps() {
+  const api = createApi({
+    accessKey: "1h-h4IzYTRyM07EXYypkwFsHpl1zjoEsT32AvfEpGfw"
+  });
+
+  const data = await api.search
+    .getPhotos({ query: "dolomites", orientation: "landscape", })
+    .then(data => data.response.results)
+    .catch(() => {
+      console.log("something went wrong!");
+    });
+
+  return {
+    props: {
+      data
+    }
+  }
 }

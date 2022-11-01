@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-export const SectionWrapper = styled.section`
+export const LayoutWrapper = styled.div`
 	display: grid;
-	grid-template-columns: 65% 35%;
+	grid-template-columns: 50% 50%;
 	height: 100vh;
 	
 	@media(max-width: 768px) {
@@ -23,4 +23,11 @@ export const Menu = styled.div`
 		height: unset;
 		margin-bottom: 0;
 	}
+`
+
+export const Content = styled.article`
+	display: flex;
+	flex-direction:column;
+	justify-content: right;
+	padding: 30px;
 `
