@@ -8,7 +8,7 @@ function Navigation() {
   const router = useRouter();
   const MENU_OPTIONS = [
     {
-      label: "who is pedro?",
+      label: "who?",
       path: "/",
     },
     {
